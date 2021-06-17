@@ -18,7 +18,9 @@
 
 ## vuex核心概念
 ### 1. state
-&ensp; &ensp; state提供唯一的公共数据资源，所有共享的数据都要统一放到store的state中进行存储。组件中访问state中数据的方式有两种：
+&ensp; &ensp; state提供唯一的公共数据资源，所有共享的数据都要统一放到store的state中进行存储。
+
+&ensp; &ensp;组件中访问state中数据的方式有两种：
 - ```this.$store.state.全局数据名称```
 - 从vuex中导入mapState函数&ensp;  ```import { mapState } from 'vuex'``` 通过导入的mapState函数，将当前组件需要的全局数据，映射为当前组件的computed计算属性。
     ```
@@ -27,5 +29,12 @@
     }
     ```
 ### 2. mutation
+&ensp; &ensp; mutation用于变更store中的数据。
+- vuex规定只能通过mutation变更store数据，不可以直接操作store中的数据
+- 通过mutation变更数据的做法可以集中监控所有数据的变化
+
+&ensp; &ensp; 触发mutations的两种方式
+- ```this.$store.commit('定义在mutations中的函数名')```，   commit 用来触发mutation中的函数
+- 从vuex中导入mapMutations函数  ```import { mapMutations } from 'vuex'``` 通过导入的mapMutations函数，将当前组件需要的mutation函数，映射为当前组件的methods方法。
 ### 3. action
 ### 4. getter

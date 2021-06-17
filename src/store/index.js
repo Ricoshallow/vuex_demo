@@ -9,6 +9,18 @@ export default new Vuex.Store({
   },
   // 只有mutation中函数才有修改state数据的权力
   mutations: {
+    add (state) {
+      state.count++
+    },
+    addN (state, step) {
+      state.count += step
+    },
+    sub (state) {
+      state.count--
+    },
+    subN (state, step) {
+      state.count -= step
+    }
   },
   // 处理异步任务
   actions: {
