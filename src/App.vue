@@ -2,7 +2,7 @@
   <div>
     <my-addition></my-addition>
 
-    <p>---------------------</p>
+    <p>---------------------------------</p>
 
     <my-subtraction></my-subtraction>
   </div>

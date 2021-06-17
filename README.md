@@ -53,3 +53,13 @@
     }
     ```
 ### 4. getter
+&ensp; &ensp; getter用于对store中的数据进行加工处理形成新的数据。store中数据发生变化，getter数据也会跟着变化。
+
+&ensp; &ensp;getter的使用方法：
+- ```this.$store.getters.名称```
+-  从vuex中导入mapGetters函数&ensp;  ```import { mapGetters } from 'vuex'``` 通过导入的mapGetters函数，将当前组件需要的getter数据，映射为当前组件的computed计算属性。
+    ```
+    computed: {
+        ...mapGetters(['名称'])
+    }
+    ```
