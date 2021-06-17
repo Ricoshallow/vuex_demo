@@ -24,6 +24,26 @@ export default new Vuex.Store({
   },
   // 处理异步任务
   actions: {
+    addAsync (context) {
+      setTimeout(() => {
+        context.commit('add')
+      }, 1000)
+    },
+    addNAsync (context, step) {
+      setTimeout(() => {
+        context.commit('addN', step)
+      }, 1000)
+    },
+    subAsync (context) {
+      setTimeout(() => {
+        context.commit('sub')
+      }, 1000)
+    },
+    subNAsync (context, step) {
+      setTimeout(() => {
+        context.commit('subN', step)
+      }, 1000)
+    }
   },
   modules: {
   },

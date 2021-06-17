@@ -29,12 +29,27 @@
     }
     ```
 ### 2. mutation
-&ensp; &ensp; mutation用于变更store中的数据。
+&ensp; &ensp; mutation用于变更store中的数据 (且只能通过mutation修改数据)。
 - vuex规定只能通过mutation变更store数据，不可以直接操作store中的数据
 - 通过mutation变更数据的做法可以集中监控所有数据的变化
 
 &ensp; &ensp; 触发mutations的两种方式
 - ```this.$store.commit('定义在mutations中的函数名')```，   commit 用来触发mutation中的函数
-- 从vuex中导入mapMutations函数  ```import { mapMutations } from 'vuex'``` 通过导入的mapMutations函数，将当前组件需要的mutation函数，映射为当前组件的methods方法。
+- 从vuex中导入mapMutations函数  ```import { mapMutations } from 'vuex'``` 通过导入的mapMutations函数，将当前组件需要的mutations函数，映射为当前组件的methods方法。
+    ```
+    methods: {
+        ...mapMutations(['mutations中函数名称'])
+    }
+    ```
 ### 3. action
+&ensp; &ensp; action用于处理异步任务。但是不能在action定义的函数中直接修改state中的数据，须通过context.commit('mutation中定义的函数') 触发mutation
+
+&ensp; &ensp; actions触发方式：
+- ```this.$store.dispatch('action中的异步函数')```, dispatch用来触发action中的函数
+- 从vuex中导入mapActions函数 ```import { mapActions } from 'vuex' ```通过导入的mapActions函数，将当前组件需要的actions函数，映射为当前组件的methods方法。
+    ```
+    methods: {
+        ...mapactions(['actions中函数名称'])
+    }
+    ```
 ### 4. getter
