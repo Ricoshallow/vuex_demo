@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>当前最新的count值为：</h2>
+    <h2>当前最新的count值为：{{$store.state.count}}</h2>
     <button>+1</button>
   </div>
 </template>
@@ -11,6 +11,8 @@ export default {
     return {
 
     }
+  },
+  methods: {
   }
 }
 </script>
